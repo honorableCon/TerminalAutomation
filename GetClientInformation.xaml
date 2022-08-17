@@ -1,0 +1,329 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetClientInformation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Balance" Type="InOutArgument(x:String)" />
+    <x:Property Name="out_RIB" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>678.666666666667,785.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Scrabe screen with OCR to retrieve Balance and Card&#xA;" CvMethod="ElementDetection, OCR" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DisplayName="Scrape screen with Computer Vision" sap:VirtualizedContainerService.HintSize="434,720.666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+    <p:CVScope.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (707,450,75,16)&quot; +&#xA;&quot;Anchor: Text 'BALANCE' (707,430,66,13)&quot;]" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Balance" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="10bba1d71d3bf4dfdacbc29e46d0a214" RefreshBefore="True" Result="[out_Balance]" Version="V3">
+            <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+              <uc:CvDescriptor>
+                <uc:CvDescriptor.Anchors>
+                  <x:Array Type="uc:CvElementDescriptor">
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="707, 430, 66, 13" ElementType="Text" Text="BALANCE" />
+                  </x:Array>
+                </uc:CvDescriptor.Anchors>
+                <uc:CvDescriptor.Target>
+                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="707, 450, 75, 16" ElementType="AnyText" />
+                </uc:CvDescriptor.Target>
+              </uc:CvDescriptor>
+            </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+          </p:CvGetTextWithDescriptor>
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (436,449,168,14)&quot; +&#xA;&quot;Anchor: Text 'CONTRACT NUMBER' (436,430,140,14)&quot;]" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Card" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="ae315da475465a1d5b2495ae502cca83" RefreshBefore="True" Result="[out_RIB]" Version="V3">
+            <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+              <uc:CvDescriptor>
+                <uc:CvDescriptor.Anchors>
+                  <x:Array Type="uc:CvElementDescriptor">
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="436, 430, 140, 14" ElementType="Text" Text="CONTRACT NUMBER" />
+                  </x:Array>
+                </uc:CvDescriptor.Anchors>
+                <uc:CvDescriptor.Target>
+                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="436, 449, 168, 14" ElementType="AnyWordGroup" />
+                </uc:CvDescriptor.Target>
+              </uc:CvDescriptor>
+            </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+          </p:CvGetTextWithDescriptor>
+        </Sequence>
+      </ActivityAction>
+    </p:CVScope.Body>
+    <p:CVScope.DesignTimeCache>
+      <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+    </p:CVScope.DesignTimeCache>
+    <p:CVScope.DesignTimeCacheContainer>
+      <uc:CvCacheContainer>
+        <uc:CvCacheContainer.Caches>
+          <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+            <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" InformativeScreenshot="e5db9cb22f4fd8755353c49fbe91241c" LogicalPosition="0, -1" OcrText="C:\ terminalemulator.exe X + v _ X Mainframe = Banking System - Enrique Diaz User ADMIN __|_ _|I __I| -- |1__ __I| =||__ |_I CUSTOMER: &gt; Document : 12345L &gt; Full Name : Adam Gilchrist &gt; Phone Number : +4412345612350 &gt; Date of Birth : 06/04/1987 Email :  ag@mycompany.com &gt; User Name : ag PRODUCTS PRODUCT NAME TYPE CONTRACT NUMBER BALANCE = Personal Car Loan LOAN 7895 1478 85 56320 6.000,00 EUR - Normal Account ACCOUNT 8965 5236 66 65456 14.520,34 EUR - My First Home MORTGAGE 8522 5412 33 32323 320.000,00 EUR Senyone Bank - 08/11/2022 10:20:51 F12 = Transmit F1 - Help F3 - Back X - Access" Position="0, -1" ScaleFactor="1.5" ScreenshotGuid="1e8c5d86-a548-467a-9b02-b2d3069e7fd8" ServerVersion="1">
+              <uc:CVCache.CvUiElements>
+                <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                  <uc:CvElementInfo Category="Icon" Region="16, 8, 19, 18" />
+                  <uc:CvElementInfo Category="CloseButton" Region="1248, 7, 17, 17" />
+                  <uc:CvElementInfo Category="CloseButton" Region="219, 8, 16, 16" />
+                  <uc:CvElementInfo Category="MinimizeButton" Region="1156, 8, 18, 14" />
+                  <uc:CvElementInfo Category="MaximizeButton" Region="1202, 7, 16, 16" />
+                  <uc:CvElementInfo Category="Icon" Region="260, 8, 17, 17" />
+                  <uc:CvElementInfo Category="Button" Region="250, 3, 35, 29" />
+                  <uc:CvElementInfo Category="Button" Region="6, 2, 243, 32" />
+                  <uc:CvElementInfo Category="InputBox" Region="8, 2, 237, 30" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 353, 14, 14" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1202, 8, 15, 15" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="286, 134, 50, 24" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="548, 134, 118, 24" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1156, 9, 15, 13" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 372, 14, 14" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 334, 14, 14" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 314, 15, 14" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="558, 146, 103, 32" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="78, 294, 15, 14" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="80, 486, 22, 20" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="944, 598, 28, 26" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="36, 79, 772, 168" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="583, 142, 51, 35" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="946, 601, 16, 19" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="242, 328, 696, 21" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="650, 431, 628, 17" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="611, 486, 519, 22" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="167, 348, 898, 23" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="606, 451, 458, 24" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="616, 409, 659, 18" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="666, 444, 604, 32" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="607, 432, 443, 30" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="98, 316, 1182, 27" />
+                  <uc:CvElementInfo Category="InputBox" Region="257, 1, 1002, 29" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="18, 81, 767, 476" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="34, 180, 562, 323" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="6, 290, 822, 412" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="290, 8, 17, 18" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="80, 313, 14, 14" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="79, 334, 14, 14" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="80, 372, 14, 13" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="78, 294, 16, 14" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="79, 353, 14, 14" />
+                  <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="78, 275, 16, 16" />
+                </scg:List>
+              </uc:CVCache.CvUiElements>
+              <uc:CVCache.OcrTexts>
+                <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
+                  <uc:OcrTextInfo Region="20, 14, 12, 8" Text="C:\" />
+                  <uc:OcrTextInfo Region="44, 12, 118, 11" Text="terminalemulator.exe" />
+                  <uc:OcrTextInfo Region="222, 12, 10, 10" Text="X" />
+                  <uc:OcrTextInfo Region="263, 10, 11, 11" Text="+" />
+                  <uc:OcrTextInfo Region="294, 13, 11, 7" Text="v" />
+                  <uc:OcrTextInfo Region="1158, 5, 12, 12" Text="_" />
+                  <uc:OcrTextInfo Region="1250, 10, 13, 12" Text="X" />
+                  <uc:OcrTextInfo Region="343, 43, 84, 14" Text="Mainframe" />
+                  <uc:OcrTextInfo Region="436, 45, 11, 12" Text="=" />
+                  <uc:OcrTextInfo Region="455, 43, 65, 17" Text="Banking" />
+                  <uc:OcrTextInfo Region="530, 44, 57, 16" Text="System" />
+                  <uc:OcrTextInfo Region="594, 43, 11, 14" Text="-" />
+                  <uc:OcrTextInfo Region="614, 43, 66, 17" Text="Enrique" />
+                  <uc:OcrTextInfo Region="688, 42, 38, 15" Text="Diaz" />
+                  <uc:OcrTextInfo Region="8, 63, 37, 14" Text="User" />
+                  <uc:OcrTextInfo Region="53, 63, 48, 13" Text="ADMIN" />
+                  <uc:OcrTextInfo Region="249, 138, 49, 18" Text="__|_" />
+                  <uc:OcrTextInfo Region="324, 137, 28, 19" Text="_|I" />
+                  <uc:OcrTextInfo Region="509, 138, 39, 18" Text="__I|" />
+                  <uc:OcrTextInfo Region="118, 156, 34, 18" Text="--" />
+                  <uc:OcrTextInfo Region="204, 157, 36, 18" Text="|1__" />
+                  <uc:OcrTextInfo Region="510, 157, 37, 18" Text="__I|" />
+                  <uc:OcrTextInfo Region="585, 157, 48, 18" Text="=||__" />
+                  <uc:OcrTextInfo Region="297, 176, 26, 18" Text="|_I" />
+                  <uc:OcrTextInfo Region="81, 256, 80, 14" Text="CUSTOMER:" />
+                  <uc:OcrTextInfo Region="81, 277, 11, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="101, 276, 74, 13" Text="Document" />
+                  <uc:OcrTextInfo Region="187, 279, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="250, 276, 56, 14" Text="12345L" />
+                  <uc:OcrTextInfo Region="81, 296, 11, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="101, 294, 37, 14" Text="Full" />
+                  <uc:OcrTextInfo Region="147, 295, 37, 13" Text="Name" />
+                  <uc:OcrTextInfo Region="196, 298, 5, 11" Text=":" />
+                  <uc:OcrTextInfo Region="250, 294, 38, 14" Text="Adam" />
+                  <uc:OcrTextInfo Region="296, 294, 85, 14" Text="Gilchrist" />
+                  <uc:OcrTextInfo Region="81, 316, 11, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="100, 314, 47, 14" Text="Phone" />
+                  <uc:OcrTextInfo Region="156, 314, 58, 14" Text="Number" />
+                  <uc:OcrTextInfo Region="224, 318, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="250, 314, 132, 14" Text="+4412345612350" />
+                  <uc:OcrTextInfo Region="81, 335, 11, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="100, 334, 38, 13" Text="Date" />
+                  <uc:OcrTextInfo Region="147, 333, 19, 14" Text="of" />
+                  <uc:OcrTextInfo Region="175, 333, 47, 14" Text="Birth" />
+                  <uc:OcrTextInfo Region="234, 337, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="250, 332, 94, 16" Text="06/04/1987" />
+                  <uc:OcrTextInfo Region="101, 352, 46, 14" Text="Email" />
+                  <uc:OcrTextInfo Region="159, 356, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="243, 354, 155, 16" Text=" ag@mycompany.com" />
+                  <uc:OcrTextInfo Region="81, 374, 10, 9" Text="&gt;" />
+                  <uc:OcrTextInfo Region="100, 372, 38, 13" Text="User" />
+                  <uc:OcrTextInfo Region="147, 373, 38, 12" Text="Name" />
+                  <uc:OcrTextInfo Region="196, 376, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="249, 376, 20, 13" Text="ag" />
+                  <uc:OcrTextInfo Region="82, 411, 78, 13" Text="PRODUCTS" />
+                  <uc:OcrTextInfo Region="82, 430, 65, 13" Text="PRODUCT" />
+                  <uc:OcrTextInfo Region="157, 430, 37, 14" Text="NAME" />
+                  <uc:OcrTextInfo Region="343, 430, 38, 14" Text="TYPE" />
+                  <uc:OcrTextInfo Region="436, 430, 75, 14" Text="CONTRACT" />
+                  <uc:OcrTextInfo Region="520, 430, 56, 13" Text="NUMBER" />
+                  <uc:OcrTextInfo Region="707, 430, 66, 13" Text="BALANCE" />
+                  <uc:OcrTextInfo Region="62, 458, 10, 10" Text="=" />
+                  <uc:OcrTextInfo Region="82, 449, 74, 14" Text="Personal" />
+                  <uc:OcrTextInfo Region="166, 450, 28, 13" Text="Car" />
+                  <uc:OcrTextInfo Region="203, 450, 38, 13" Text="Loan" />
+                  <uc:OcrTextInfo Region="343, 449, 38, 14" Text="LOAN" />
+                  <uc:OcrTextInfo Region="436, 450, 37, 13" Text="7895" />
+                  <uc:OcrTextInfo Region="483, 449, 38, 14" Text="1478" />
+                  <uc:OcrTextInfo Region="530, 450, 18, 13" Text="85" />
+                  <uc:OcrTextInfo Region="558, 449, 46, 14" Text="56320" />
+                  <uc:OcrTextInfo Region="707, 450, 75, 16" Text="6.000,00" />
+                  <uc:OcrTextInfo Region="792, 450, 28, 13" Text="EUR" />
+                  <uc:OcrTextInfo Region="62, 475, 10, 12" Text="-" />
+                  <uc:OcrTextInfo Region="82, 469, 57, 13" Text="Normal" />
+                  <uc:OcrTextInfo Region="146, 469, 67, 14" Text="Account" />
+                  <uc:OcrTextInfo Region="342, 469, 67, 14" Text="ACCOUNT" />
+                  <uc:OcrTextInfo Region="437, 469, 36, 13" Text="8965" />
+                  <uc:OcrTextInfo Region="483, 469, 38, 13" Text="5236" />
+                  <uc:OcrTextInfo Region="529, 469, 20, 13" Text="66" />
+                  <uc:OcrTextInfo Region="558, 469, 47, 13" Text="65456" />
+                  <uc:OcrTextInfo Region="708, 468, 83, 16" Text="14.520,34" />
+                  <uc:OcrTextInfo Region="800, 469, 29, 13" Text="EUR" />
+                  <uc:OcrTextInfo Region="62, 495, 10, 12" Text="-" />
+                  <uc:OcrTextInfo Region="81, 488, 20, 16" Text="My" />
+                  <uc:OcrTextInfo Region="110, 488, 46, 14" Text="First" />
+                  <uc:OcrTextInfo Region="166, 488, 37, 14" Text="Home" />
+                  <uc:OcrTextInfo Region="342, 488, 76, 14" Text="MORTGAGE" />
+                  <uc:OcrTextInfo Region="436, 488, 37, 13" Text="8522" />
+                  <uc:OcrTextInfo Region="484, 488, 36, 13" Text="5412" />
+                  <uc:OcrTextInfo Region="530, 488, 18, 14" Text="33" />
+                  <uc:OcrTextInfo Region="558, 488, 46, 13" Text="32323" />
+                  <uc:OcrTextInfo Region="708, 488, 92, 16" Text="320.000,00" />
+                  <uc:OcrTextInfo Region="810, 488, 28, 14" Text="EUR" />
+                  <uc:OcrTextInfo Region="8, 604, 65, 16" Text="Senyone" />
+                  <uc:OcrTextInfo Region="82, 604, 38, 14" Text="Bank" />
+                  <uc:OcrTextInfo Region="128, 605, 11, 12" Text="-" />
+                  <uc:OcrTextInfo Region="147, 603, 94, 16" Text="08/11/2022" />
+                  <uc:OcrTextInfo Region="250, 604, 75, 14" Text="10:20:51" />
+                  <uc:OcrTextInfo Region="567, 604, 28, 14" Text="F12" />
+                  <uc:OcrTextInfo Region="604, 606, 11, 12" Text="=" />
+                  <uc:OcrTextInfo Region="622, 604, 76, 13" Text="Transmit" />
+                  <uc:OcrTextInfo Region="726, 604, 18, 13" Text="F1" />
+                  <uc:OcrTextInfo Region="753, 605, 11, 12" Text="-" />
+                  <uc:OcrTextInfo Region="772, 604, 38, 17" Text="Help" />
+                  <uc:OcrTextInfo Region="838, 604, 18, 14" Text="F3" />
+                  <uc:OcrTextInfo Region="865, 605, 11, 12" Text="-" />
+                  <uc:OcrTextInfo Region="884, 604, 38, 14" Text="Back" />
+                  <uc:OcrTextInfo Region="949, 604, 11, 14" Text="X" />
+                  <uc:OcrTextInfo Region="968, 605, 10, 12" Text="-" />
+                  <uc:OcrTextInfo Region="987, 604, 56, 14" Text="Access" />
+                </scg:List>
+              </uc:CVCache.OcrTexts>
+            </uc:CVCache>
+          </scg:List>
+        </uc:CvCacheContainer.Caches>
+      </uc:CvCacheContainer>
+    </p:CVScope.DesignTimeCacheContainer>
+    <p:CVScope.OCREngine>
+      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+        <ActivityFunc.Argument>
+          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+        </ActivityFunc.Argument>
+        <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+      </ActivityFunc>
+    </p:CVScope.OCREngine>
+    <p:CVScope.Target>
+      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23cd2364-ede4-4216-a128-b91377f432d7" InformativeScreenshot="226e501382f49359cc12e2d4088e6d35" Selector="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;&lt;wnd cls='Windows.UI.Composition.DesktopWindowContentBridge' title='DesktopWindowXamlSource' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target.TimeoutMS>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:Target.TimeoutMS>
+      </ui:Target>
+    </p:CVScope.Target>
+    <p:CVScope.UseLocalServer>
+      <InArgument x:TypeArguments="x:Boolean" />
+    </p:CVScope.UseLocalServer>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </p:CVScope>
+</Activity>

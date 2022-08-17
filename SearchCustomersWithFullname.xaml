@@ -1,0 +1,149 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchCustomersWithFullname" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FullName" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>390,94.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Search customers with full name" sap:VirtualizedContainerService.HintSize="208,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Card" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="BANKING APPLICATIONS         SYSTEM APPLICATIONS&#xA;     CU - Customers                     AB - About&#xA;     AC - Accounts                       OP - Options&#xA;     LO - Loans&#xA;     RI - Risk Advisor                    EX - Exit (from system)&#xA;" ClickBeforeMode="None" DisplayName="Choose option on main menu" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,231.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Text="CU" Version="V1">
+      <uix:NTypeInto.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="20, 85, 331, 58" FriendlyName="'windowsterminal.exe ter…'" Guid="815b9c72-ac1a-4a94-927b-347de21859cf" ImageBase64="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" InformativeScreenshot="5f75a76ab9a8ba72c5430b2eb0d38c44.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+      </uix:NTypeInto.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NTypeInto>
+    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NKeyboardShortcuts>
+    <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Possible actions    &#xA;        SD - Search by document&#xA;        SN - Search by full name&#xA;        SP - Search by phone number&#xA;        VL - Verify customer login&#xA;        EX - Exit (to main menu)" ClickBeforeMode="None" DisplayName="Choose option to submenu - CUstomers" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,214.666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_10" IsPassword="True" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Text="SN" Version="V1">
+      <uix:NTypeInto.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="18, 87, 285, 53" FriendlyName="'windowsterminal.exe ter…'" Guid="e8bdbaf2-c3a1-4006-9232-dc4e045b3e06" ImageBase64="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" InformativeScreenshot="96545ec9869f3f8eb7f6e6b3c231059b.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+      </uix:NTypeInto.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NTypeInto>
+    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NKeyboardShortcuts>
+    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Full Name" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Text="[FullName]" Version="V1">
+      <uix:NTypeInto.Target>
+        <uix:TargetAnchorable DesignTimeRectangle="116, 415, 324, 41" FriendlyName="'windowsterminal.exe ter…'" Guid="c89d9787-f807-46f3-a742-30f3a2e297d6" ImageBase64="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" InformativeScreenshot="dee5a1b1e8d8e3ea5e33e2563e9ae875.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+      </uix:NTypeInto.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NTypeInto>
+    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NKeyboardShortcuts>
+  </Sequence>
+</Activity>

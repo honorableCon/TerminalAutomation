@@ -1,0 +1,14 @@
+﻿{
+  "Id": "_RO6EnpunUuYLWk067iVqQ",
+  "Reference": "jZHOs0pX70uZ3CqxqICqig/_RO6EnpunUuYLWk067iVqQ",
+  "ParentRef": "jZHOs0pX70uZ3CqxqICqig/E08v6eoxI02gTbyxuVSD_A",
+  "Name": "terminalemulator.exe",
+  "Type": "Screen",
+  "TaxonomyType": "Screen",
+  "Created": "2022-08-17T15:17:50.1187914Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-08-17T15:17:50.1187914Z"
+}
