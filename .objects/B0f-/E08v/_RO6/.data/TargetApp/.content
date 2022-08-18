@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<TargetApp Area="-11, -11, 1942, 1102" Arguments="terminalemulator.exe" ContentHash="s0VnNrY0GE-fEWOSmYolig" FilePath="C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.15.2002.0_x64__8wekyb3d8bbwe\windowsterminal.exe" IsExactTitleEnabled="True" Selector="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe'/&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
-  <imageRef attrName="IconBase64" xmlns="">0cfLc6QHMtkGfad_hjjbBCQ</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="bcda8acb183d34cfdc644dbe0947a32b.png" xmlns="">0XhlVGCCxc0WmLPlINWmD1g</imageRef>
-</TargetApp>

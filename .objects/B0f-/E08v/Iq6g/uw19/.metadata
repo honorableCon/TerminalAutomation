@@ -1,0 +1,14 @@
+﻿{
+  "Id": "uw190ygOaEms3351goHTWg",
+  "Reference": "jZHOs0pX70uZ3CqxqICqig/uw190ygOaEms3351goHTWg",
+  "ParentRef": "jZHOs0pX70uZ3CqxqICqig/Iq6g4XYE00O35CJGYoNvsQ",
+  "Name": "Check Terminal State",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-08-18T16:19:13.3027197Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-08-18T16:19:13.3027197Z"
+}

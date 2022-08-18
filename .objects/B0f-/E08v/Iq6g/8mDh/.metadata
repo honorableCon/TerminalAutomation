@@ -1,0 +1,14 @@
+﻿{
+  "Id": "8mDhDl6MAkyUkk86Atblxw",
+  "Reference": "jZHOs0pX70uZ3CqxqICqig/8mDhDl6MAkyUkk86Atblxw",
+  "ParentRef": "jZHOs0pX70uZ3CqxqICqig/Iq6g4XYE00O35CJGYoNvsQ",
+  "Name": "Choose option on main menu",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2022-08-18T16:21:38.6034817Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=21.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-08-18T16:21:38.6034817Z"
+}

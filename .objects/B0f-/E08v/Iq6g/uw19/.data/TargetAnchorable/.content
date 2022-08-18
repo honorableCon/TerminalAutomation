@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="0-PbDuV3vUKjylEApM_qMw" DesignTimeRectangle="280, 251, 712, 127" FriendlyName="'terminalemulator.exe'" Guid="a5167554-fcad-4f6f-8bbd-b796806ee998" ScopeSelectorArgument="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*' /&gt;" SearchSteps="Image" TargetType="ImageBased" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0v7NDgGmJHEipVg3zLcubyg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="0a8525bdf130a3614381d44ac4ed3084.png" xmlns="">0DKypSwpm6E-PK-5WpskQug</imageRef>
+</TargetAnchorable>

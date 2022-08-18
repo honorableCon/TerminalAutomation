@@ -3,7 +3,7 @@
     <x:Property Name="out_Balance" Type="OutArgument(x:String)" />
     <x:Property Name="out_RIB" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>876,785.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>508,785.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -87,37 +87,37 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Scrabe screen with OCR to retrieve Balance and Card&#xA;" CvMethod="ElementDetection, OCR" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DisplayName="Scrape screen with Computer Vision" sap:VirtualizedContainerService.HintSize="434,720.666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+  <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Scrabe screen with OCR to retrieve Balance and Card&#xA;" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DisplayName="Scrape screen with Computer Vision" sap:VirtualizedContainerService.HintSize="434,720.666666666667" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
     <p:CVScope.Body>
       <ActivityAction x:TypeArguments="x:Object">
         <ActivityAction.Argument>
           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
         </ActivityAction.Argument>
         <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_16">
-          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (707,450,75,16)&quot; +&#xA;&quot;Anchor: Text 'BALANCE' (707,430,66,13)&quot;]" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Balance" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="10bba1d71d3bf4dfdacbc29e46d0a214" RefreshBefore="True" Result="[out_Balance]" Version="V3">
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (550,368,60,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'BALANCE' (551,352,52,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="39ccad305eee7c2ec0833011d0750f16" RefreshBefore="True" Result="[out_Balance]" Version="V3">
             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
               <uc:CvDescriptor>
                 <uc:CvDescriptor.Anchors>
                   <x:Array Type="uc:CvElementDescriptor">
-                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="707, 430, 66, 13" ElementType="Text" Text="BALANCE" />
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="551, 352, 52, 10" ElementType="Text" Text="BALANCE" />
                   </x:Array>
                 </uc:CvDescriptor.Anchors>
                 <uc:CvDescriptor.Target>
-                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="707, 450, 75, 16" ElementType="AnyText" />
+                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="550, 368, 60, 13" ElementType="AnyText" />
                 </uc:CvDescriptor.Target>
               </uc:CvDescriptor>
             </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
           </p:CvGetTextWithDescriptor>
-          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (436,449,168,14)&quot; +&#xA;&quot;Anchor: Text 'CONTRACT NUMBER' (436,430,140,14)&quot;]" DesignTimeCacheId="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Card" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="ae315da475465a1d5b2495ae502cca83" RefreshBefore="True" Result="[out_RIB]" Version="V3">
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (338,368,132,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'CONTRACT NUMBER' (338,352,112,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="61d04375a0a89f8fb0fb0f1b2315fb61" RefreshBefore="True" Result="[out_RIB]" Version="V3">
             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
               <uc:CvDescriptor>
                 <uc:CvDescriptor.Anchors>
                   <x:Array Type="uc:CvElementDescriptor">
-                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="436, 430, 140, 14" ElementType="Text" Text="CONTRACT NUMBER" />
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="338, 352, 112, 10" ElementType="Text" Text="CONTRACT NUMBER" />
                   </x:Array>
                 </uc:CvDescriptor.Anchors>
                 <uc:CvDescriptor.Target>
-                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="436, 449, 168, 14" ElementType="AnyWordGroup" />
+                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="338, 368, 132, 10" ElementType="AnyWordGroup" />
                 </uc:CvDescriptor.Target>
               </uc:CvDescriptor>
             </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
@@ -131,168 +131,158 @@
     <p:CVScope.DesignTimeCacheContainer>
       <uc:CvCacheContainer>
         <uc:CvCacheContainer.Caches>
-          <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-            <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="11e159a4-71f8-4f7d-818e-ad0f9c6e0d8e" InformativeScreenshot="e5db9cb22f4fd8755353c49fbe91241c" LogicalPosition="0, -1" OcrText="C:\ terminalemulator.exe X + v _ X Mainframe = Banking System - Enrique Diaz User ADMIN __|_ _|I __I| -- |1__ __I| =||__ |_I CUSTOMER: &gt; Document : 12345L &gt; Full Name : Adam Gilchrist &gt; Phone Number : +4412345612350 &gt; Date of Birth : 06/04/1987 Email :  ag@mycompany.com &gt; User Name : ag PRODUCTS PRODUCT NAME TYPE CONTRACT NUMBER BALANCE = Personal Car Loan LOAN 7895 1478 85 56320 6.000,00 EUR - Normal Account ACCOUNT 8965 5236 66 65456 14.520,34 EUR - My First Home MORTGAGE 8522 5412 33 32323 320.000,00 EUR Senyone Bank - 08/11/2022 10:20:51 F12 = Transmit F1 - Help F3 - Back X - Access" Position="0, -1" ScaleFactor="1.5" ScreenshotGuid="1e8c5d86-a548-467a-9b02-b2d3069e7fd8" ServerVersion="1">
+          <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+            <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="3325476f-23dd-4f28-8398-44d20a8d0485" InformativeScreenshot="3a29ae1376c8427c3030d5c9e449cc35" LogicalPosition="199, 190" OcrText=":\Users\Honorablecon\Documents\UiPath\TerminalAutomation\terminalemulator.e __ X Mainframe = Banking System - Enrique Diaz User ADMIN I_l_I_I CUSTOMER: &gt; Document : 11235P &gt; Full Name : Johhny Bravo &gt; Phone Number : +4412345612348 &gt; Date of Birth : 18/07/1989 &gt; Email : johhnybravo@mitest.com &gt; User Name : jbravo PRODUCTS: PRODUCT NAME TYPE CONTRACT NUMBER BALANCE - Personal Car Loan LOAN 8520 0258 02 02585 4.000,00 EUR - Normal Account ACCOUNT 9878 4563 21 02156 4.500,76 EUR - My First Home MORTGAGE 0231 2031 02 14520 300.000,00 EUR - Personal Loan LOAN 9856 6985 56 69856 2.000,00 EUR Personal Loan LOAN 8546 6547 25 12547 2.300,00 EUR Senyone Bank - 08/18/2022 04:22:30 F12 - Transmit F1 - Help F3 - Back X - Access" Position="199, 190" ScaleFactor="1.5" ScreenshotGuid="616fb3c7-c390-47e2-bc4f-1ad2f5074b12" ServerVersion="1">
               <uc:CVCache.CvUiElements>
-                <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
-                  <uc:CvElementInfo Category="Icon" Region="16, 8, 19, 18" />
-                  <uc:CvElementInfo Category="CloseButton" Region="1248, 7, 17, 17" />
-                  <uc:CvElementInfo Category="CloseButton" Region="219, 8, 16, 16" />
-                  <uc:CvElementInfo Category="MinimizeButton" Region="1156, 8, 18, 14" />
-                  <uc:CvElementInfo Category="MaximizeButton" Region="1202, 7, 16, 16" />
-                  <uc:CvElementInfo Category="Icon" Region="260, 8, 17, 17" />
-                  <uc:CvElementInfo Category="Button" Region="250, 3, 35, 29" />
-                  <uc:CvElementInfo Category="Button" Region="6, 2, 243, 32" />
-                  <uc:CvElementInfo Category="InputBox" Region="8, 2, 237, 30" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 353, 14, 14" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1202, 8, 15, 15" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="286, 134, 50, 24" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="548, 134, 118, 24" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1156, 9, 15, 13" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 372, 14, 14" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 334, 14, 14" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="79, 314, 15, 14" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="558, 146, 103, 32" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="78, 294, 15, 14" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="80, 486, 22, 20" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="944, 598, 28, 26" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="36, 79, 772, 168" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="583, 142, 51, 35" />
-                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="946, 601, 16, 19" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="242, 328, 696, 21" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="650, 431, 628, 17" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="611, 486, 519, 22" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="167, 348, 898, 23" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="606, 451, 458, 24" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="616, 409, 659, 18" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="666, 444, 604, 32" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="607, 432, 443, 30" />
-                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="98, 316, 1182, 27" />
-                  <uc:CvElementInfo Category="InputBox" Region="257, 1, 1002, 29" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="18, 81, 767, 476" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="34, 180, 562, 323" />
-                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="6, 290, 822, 412" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="290, 8, 17, 18" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="80, 313, 14, 14" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="79, 334, 14, 14" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="80, 372, 14, 13" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="78, 294, 16, 14" />
-                  <uc:CvElementInfo Category="ArrowButton" Region="79, 353, 14, 14" />
-                  <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="78, 275, 16, 16" />
+                <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                  <uc:CvElementInfo Category="Icon" Region="6, 6, 19, 16" />
+                  <uc:CvElementInfo Category="CloseButton" Region="866, 6, 18, 18" />
+                  <uc:CvElementInfo Category="MaximizeButton" Region="819, 6, 17, 17" />
+                  <uc:CvElementInfo Category="MinimizeButton" Region="774, 8, 16, 12" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="41, 2, 826, 24" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="738, 494, 13, 14" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="57, 272, 11, 12" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="884, 43, 14, 25" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="57, 240, 11, 12" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="57, 288, 11, 12" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="145, 304, 12, 15" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="57, 256, 11, 12" />
+                  <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="820, 7, 15, 15" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="517, 413, 352, 15" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="167, 267, 732, 15" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="138, 283, 762, 21" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="328, 348, 560, 20" />
+                  <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="425, 395, 432, 16" />
+                  <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="22, 35, 784, 440" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="57, 304, 12, 12" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="57, 288, 12, 12" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="58, 272, 11, 12" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="57, 256, 12, 13" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="57, 239, 12, 13" />
+                  <uc:CvElementInfo Category="ArrowButton" Region="57, 223, 12, 14" />
                 </scg:List>
               </uc:CVCache.CvUiElements>
               <uc:CVCache.OcrTexts>
                 <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
-                  <uc:OcrTextInfo Region="20, 14, 12, 8" Text="C:\" />
-                  <uc:OcrTextInfo Region="44, 12, 118, 11" Text="terminalemulator.exe" />
-                  <uc:OcrTextInfo Region="222, 12, 10, 10" Text="X" />
-                  <uc:OcrTextInfo Region="263, 10, 11, 11" Text="+" />
-                  <uc:OcrTextInfo Region="294, 13, 11, 7" Text="v" />
-                  <uc:OcrTextInfo Region="1158, 5, 12, 12" Text="_" />
-                  <uc:OcrTextInfo Region="1250, 10, 13, 12" Text="X" />
-                  <uc:OcrTextInfo Region="343, 43, 84, 14" Text="Mainframe" />
-                  <uc:OcrTextInfo Region="436, 45, 11, 12" Text="=" />
-                  <uc:OcrTextInfo Region="455, 43, 65, 17" Text="Banking" />
-                  <uc:OcrTextInfo Region="530, 44, 57, 16" Text="System" />
-                  <uc:OcrTextInfo Region="594, 43, 11, 14" Text="-" />
-                  <uc:OcrTextInfo Region="614, 43, 66, 17" Text="Enrique" />
-                  <uc:OcrTextInfo Region="688, 42, 38, 15" Text="Diaz" />
-                  <uc:OcrTextInfo Region="8, 63, 37, 14" Text="User" />
-                  <uc:OcrTextInfo Region="53, 63, 48, 13" Text="ADMIN" />
-                  <uc:OcrTextInfo Region="249, 138, 49, 18" Text="__|_" />
-                  <uc:OcrTextInfo Region="324, 137, 28, 19" Text="_|I" />
-                  <uc:OcrTextInfo Region="509, 138, 39, 18" Text="__I|" />
-                  <uc:OcrTextInfo Region="118, 156, 34, 18" Text="--" />
-                  <uc:OcrTextInfo Region="204, 157, 36, 18" Text="|1__" />
-                  <uc:OcrTextInfo Region="510, 157, 37, 18" Text="__I|" />
-                  <uc:OcrTextInfo Region="585, 157, 48, 18" Text="=||__" />
-                  <uc:OcrTextInfo Region="297, 176, 26, 18" Text="|_I" />
-                  <uc:OcrTextInfo Region="81, 256, 80, 14" Text="CUSTOMER:" />
-                  <uc:OcrTextInfo Region="81, 277, 11, 10" Text="&gt;" />
-                  <uc:OcrTextInfo Region="101, 276, 74, 13" Text="Document" />
-                  <uc:OcrTextInfo Region="187, 279, 4, 10" Text=":" />
-                  <uc:OcrTextInfo Region="250, 276, 56, 14" Text="12345L" />
-                  <uc:OcrTextInfo Region="81, 296, 11, 10" Text="&gt;" />
-                  <uc:OcrTextInfo Region="101, 294, 37, 14" Text="Full" />
-                  <uc:OcrTextInfo Region="147, 295, 37, 13" Text="Name" />
-                  <uc:OcrTextInfo Region="196, 298, 5, 11" Text=":" />
-                  <uc:OcrTextInfo Region="250, 294, 38, 14" Text="Adam" />
-                  <uc:OcrTextInfo Region="296, 294, 85, 14" Text="Gilchrist" />
-                  <uc:OcrTextInfo Region="81, 316, 11, 10" Text="&gt;" />
-                  <uc:OcrTextInfo Region="100, 314, 47, 14" Text="Phone" />
-                  <uc:OcrTextInfo Region="156, 314, 58, 14" Text="Number" />
-                  <uc:OcrTextInfo Region="224, 318, 4, 10" Text=":" />
-                  <uc:OcrTextInfo Region="250, 314, 132, 14" Text="+4412345612350" />
-                  <uc:OcrTextInfo Region="81, 335, 11, 10" Text="&gt;" />
-                  <uc:OcrTextInfo Region="100, 334, 38, 13" Text="Date" />
-                  <uc:OcrTextInfo Region="147, 333, 19, 14" Text="of" />
-                  <uc:OcrTextInfo Region="175, 333, 47, 14" Text="Birth" />
-                  <uc:OcrTextInfo Region="234, 337, 4, 10" Text=":" />
-                  <uc:OcrTextInfo Region="250, 332, 94, 16" Text="06/04/1987" />
-                  <uc:OcrTextInfo Region="101, 352, 46, 14" Text="Email" />
-                  <uc:OcrTextInfo Region="159, 356, 4, 10" Text=":" />
-                  <uc:OcrTextInfo Region="243, 354, 155, 16" Text=" ag@mycompany.com" />
-                  <uc:OcrTextInfo Region="81, 374, 10, 9" Text="&gt;" />
-                  <uc:OcrTextInfo Region="100, 372, 38, 13" Text="User" />
-                  <uc:OcrTextInfo Region="147, 373, 38, 12" Text="Name" />
-                  <uc:OcrTextInfo Region="196, 376, 4, 10" Text=":" />
-                  <uc:OcrTextInfo Region="249, 376, 20, 13" Text="ag" />
-                  <uc:OcrTextInfo Region="82, 411, 78, 13" Text="PRODUCTS" />
-                  <uc:OcrTextInfo Region="82, 430, 65, 13" Text="PRODUCT" />
-                  <uc:OcrTextInfo Region="157, 430, 37, 14" Text="NAME" />
-                  <uc:OcrTextInfo Region="343, 430, 38, 14" Text="TYPE" />
-                  <uc:OcrTextInfo Region="436, 430, 75, 14" Text="CONTRACT" />
-                  <uc:OcrTextInfo Region="520, 430, 56, 13" Text="NUMBER" />
-                  <uc:OcrTextInfo Region="707, 430, 66, 13" Text="BALANCE" />
-                  <uc:OcrTextInfo Region="62, 458, 10, 10" Text="=" />
-                  <uc:OcrTextInfo Region="82, 449, 74, 14" Text="Personal" />
-                  <uc:OcrTextInfo Region="166, 450, 28, 13" Text="Car" />
-                  <uc:OcrTextInfo Region="203, 450, 38, 13" Text="Loan" />
-                  <uc:OcrTextInfo Region="343, 449, 38, 14" Text="LOAN" />
-                  <uc:OcrTextInfo Region="436, 450, 37, 13" Text="7895" />
-                  <uc:OcrTextInfo Region="483, 449, 38, 14" Text="1478" />
-                  <uc:OcrTextInfo Region="530, 450, 18, 13" Text="85" />
-                  <uc:OcrTextInfo Region="558, 449, 46, 14" Text="56320" />
-                  <uc:OcrTextInfo Region="707, 450, 75, 16" Text="6.000,00" />
-                  <uc:OcrTextInfo Region="792, 450, 28, 13" Text="EUR" />
-                  <uc:OcrTextInfo Region="62, 475, 10, 12" Text="-" />
-                  <uc:OcrTextInfo Region="82, 469, 57, 13" Text="Normal" />
-                  <uc:OcrTextInfo Region="146, 469, 67, 14" Text="Account" />
-                  <uc:OcrTextInfo Region="342, 469, 67, 14" Text="ACCOUNT" />
-                  <uc:OcrTextInfo Region="437, 469, 36, 13" Text="8965" />
-                  <uc:OcrTextInfo Region="483, 469, 38, 13" Text="5236" />
-                  <uc:OcrTextInfo Region="529, 469, 20, 13" Text="66" />
-                  <uc:OcrTextInfo Region="558, 469, 47, 13" Text="65456" />
-                  <uc:OcrTextInfo Region="708, 468, 83, 16" Text="14.520,34" />
-                  <uc:OcrTextInfo Region="800, 469, 29, 13" Text="EUR" />
-                  <uc:OcrTextInfo Region="62, 495, 10, 12" Text="-" />
-                  <uc:OcrTextInfo Region="81, 488, 20, 16" Text="My" />
-                  <uc:OcrTextInfo Region="110, 488, 46, 14" Text="First" />
-                  <uc:OcrTextInfo Region="166, 488, 37, 14" Text="Home" />
-                  <uc:OcrTextInfo Region="342, 488, 76, 14" Text="MORTGAGE" />
-                  <uc:OcrTextInfo Region="436, 488, 37, 13" Text="8522" />
-                  <uc:OcrTextInfo Region="484, 488, 36, 13" Text="5412" />
-                  <uc:OcrTextInfo Region="530, 488, 18, 14" Text="33" />
-                  <uc:OcrTextInfo Region="558, 488, 46, 13" Text="32323" />
-                  <uc:OcrTextInfo Region="708, 488, 92, 16" Text="320.000,00" />
-                  <uc:OcrTextInfo Region="810, 488, 28, 14" Text="EUR" />
-                  <uc:OcrTextInfo Region="8, 604, 65, 16" Text="Senyone" />
-                  <uc:OcrTextInfo Region="82, 604, 38, 14" Text="Bank" />
-                  <uc:OcrTextInfo Region="128, 605, 11, 12" Text="-" />
-                  <uc:OcrTextInfo Region="147, 603, 94, 16" Text="08/11/2022" />
-                  <uc:OcrTextInfo Region="250, 604, 75, 14" Text="10:20:51" />
-                  <uc:OcrTextInfo Region="567, 604, 28, 14" Text="F12" />
-                  <uc:OcrTextInfo Region="604, 606, 11, 12" Text="=" />
-                  <uc:OcrTextInfo Region="622, 604, 76, 13" Text="Transmit" />
-                  <uc:OcrTextInfo Region="726, 604, 18, 13" Text="F1" />
-                  <uc:OcrTextInfo Region="753, 605, 11, 12" Text="-" />
-                  <uc:OcrTextInfo Region="772, 604, 38, 17" Text="Help" />
-                  <uc:OcrTextInfo Region="838, 604, 18, 14" Text="F3" />
-                  <uc:OcrTextInfo Region="865, 605, 11, 12" Text="-" />
-                  <uc:OcrTextInfo Region="884, 604, 38, 14" Text="Back" />
-                  <uc:OcrTextInfo Region="949, 604, 11, 14" Text="X" />
-                  <uc:OcrTextInfo Region="968, 605, 10, 12" Text="-" />
-                  <uc:OcrTextInfo Region="987, 604, 56, 14" Text="Access" />
+                  <uc:OcrTextInfo Region="33, 8, 440, 13" Text=":\Users\Honorablecon\Documents\UiPath\TerminalAutomation\terminalemulator.e" />
+                  <uc:OcrTextInfo Region="775, 5, 12, 11" Text="__" />
+                  <uc:OcrTextInfo Region="868, 8, 12, 12" Text="X" />
+                  <uc:OcrTextInfo Region="264, 32, 66, 11" Text="Mainframe" />
+                  <uc:OcrTextInfo Region="338, 34, 7, 8" Text="=" />
+                  <uc:OcrTextInfo Region="352, 31, 52, 14" Text="Banking" />
+                  <uc:OcrTextInfo Region="411, 32, 46, 13" Text="System" />
+                  <uc:OcrTextInfo Region="462, 33, 7, 10" Text="-" />
+                  <uc:OcrTextInfo Region="478, 31, 52, 14" Text="Enrique" />
+                  <uc:OcrTextInfo Region="536, 31, 30, 12" Text="Diaz" />
+                  <uc:OcrTextInfo Region="1, 48, 30, 10" Text="User" />
+                  <uc:OcrTextInfo Region="36, 48, 38, 10" Text="ADMIN" />
+                  <uc:OcrTextInfo Region="317, 141, 52, 17" Text="I_l_I_I" />
+                  <uc:OcrTextInfo Region="59, 208, 65, 10" Text="CUSTOMER:" />
+                  <uc:OcrTextInfo Region="59, 225, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="74, 224, 60, 10" Text="Document" />
+                  <uc:OcrTextInfo Region="142, 226, 4, 8" Text=":" />
+                  <uc:OcrTextInfo Region="191, 224, 45, 10" Text="11235P" />
+                  <uc:OcrTextInfo Region="59, 241, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="74, 240, 29, 11" Text="Full" />
+                  <uc:OcrTextInfo Region="110, 240, 30, 10" Text="Name" />
+                  <uc:OcrTextInfo Region="149, 242, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="191, 240, 46, 14" Text="Johhny" />
+                  <uc:OcrTextInfo Region="242, 240, 38, 10" Text="Bravo" />
+                  <uc:OcrTextInfo Region="59, 257, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="74, 256, 38, 11" Text="Phone" />
+                  <uc:OcrTextInfo Region="117, 256, 46, 11" Text="Number" />
+                  <uc:OcrTextInfo Region="171, 258, 4, 9" Text=":" />
+                  <uc:OcrTextInfo Region="192, 256, 104, 11" Text="+4412345612348" />
+                  <uc:OcrTextInfo Region="59, 273, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="74, 272, 30, 10" Text="Date" />
+                  <uc:OcrTextInfo Region="110, 272, 16, 11" Text="of" />
+                  <uc:OcrTextInfo Region="132, 272, 38, 11" Text="Birth" />
+                  <uc:OcrTextInfo Region="178, 273, 4, 10" Text=":" />
+                  <uc:OcrTextInfo Region="191, 272, 75, 12" Text="18/07/1989" />
+                  <uc:OcrTextInfo Region="59, 289, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="74, 288, 37, 12" Text="Email" />
+                  <uc:OcrTextInfo Region="120, 290, 4, 8" Text=":" />
+                  <uc:OcrTextInfo Region="190, 288, 164, 14" Text="johhnybravo@mitest.com" />
+                  <uc:OcrTextInfo Region="59, 305, 8, 10" Text="&gt;" />
+                  <uc:OcrTextInfo Region="73, 304, 32, 10" Text="User" />
+                  <uc:OcrTextInfo Region="110, 304, 30, 10" Text="Name" />
+                  <uc:OcrTextInfo Region="149, 306, 4, 8" Text=":" />
+                  <uc:OcrTextInfo Region="192, 304, 44, 13" Text="jbravo" />
+                  <uc:OcrTextInfo Region="59, 336, 64, 10" Text="PRODUCTS:" />
+                  <uc:OcrTextInfo Region="59, 352, 52, 10" Text="PRODUCT" />
+                  <uc:OcrTextInfo Region="118, 352, 30, 10" Text="NAME" />
+                  <uc:OcrTextInfo Region="265, 352, 29, 10" Text="TYPE" />
+                  <uc:OcrTextInfo Region="338, 352, 60, 10" Text="CONTRACT" />
+                  <uc:OcrTextInfo Region="404, 352, 46, 10" Text="NUMBER" />
+                  <uc:OcrTextInfo Region="551, 352, 52, 10" Text="BALANCE" />
+                  <uc:OcrTextInfo Region="43, 373, 10, 12" Text="-" />
+                  <uc:OcrTextInfo Region="59, 368, 59, 11" Text="Personal" />
+                  <uc:OcrTextInfo Region="125, 368, 23, 10" Text="Car" />
+                  <uc:OcrTextInfo Region="155, 368, 30, 10" Text="Loan" />
+                  <uc:OcrTextInfo Region="265, 368, 30, 10" Text="LOAN" />
+                  <uc:OcrTextInfo Region="338, 368, 30, 10" Text="8520" />
+                  <uc:OcrTextInfo Region="374, 368, 30, 10" Text="0258" />
+                  <uc:OcrTextInfo Region="411, 368, 15, 10" Text="02" />
+                  <uc:OcrTextInfo Region="433, 368, 37, 10" Text="02585" />
+                  <uc:OcrTextInfo Region="550, 368, 60, 13" Text="4.000,00" />
+                  <uc:OcrTextInfo Region="617, 368, 22, 11" Text="EUR" />
+                  <uc:OcrTextInfo Region="43, 389, 10, 12" Text="-" />
+                  <uc:OcrTextInfo Region="59, 384, 45, 11" Text="Normal" />
+                  <uc:OcrTextInfo Region="110, 384, 53, 10" Text="Account" />
+                  <uc:OcrTextInfo Region="264, 384, 53, 10" Text="ACCOUNT" />
+                  <uc:OcrTextInfo Region="338, 384, 30, 11" Text="9878" />
+                  <uc:OcrTextInfo Region="374, 384, 30, 11" Text="4563" />
+                  <uc:OcrTextInfo Region="411, 384, 16, 10" Text="21" />
+                  <uc:OcrTextInfo Region="434, 385, 37, 10" Text="02156" />
+                  <uc:OcrTextInfo Region="550, 384, 59, 13" Text="4.500,76" />
+                  <uc:OcrTextInfo Region="617, 384, 22, 11" Text="EUR" />
+                  <uc:OcrTextInfo Region="43, 406, 10, 11" Text="-" />
+                  <uc:OcrTextInfo Region="59, 400, 16, 12" Text="My" />
+                  <uc:OcrTextInfo Region="81, 399, 38, 12" Text="First" />
+                  <uc:OcrTextInfo Region="124, 400, 31, 10" Text="Home" />
+                  <uc:OcrTextInfo Region="264, 400, 59, 10" Text="MORTGAGE" />
+                  <uc:OcrTextInfo Region="338, 400, 30, 10" Text="0231" />
+                  <uc:OcrTextInfo Region="374, 400, 31, 11" Text="2031" />
+                  <uc:OcrTextInfo Region="411, 400, 16, 10" Text="02" />
+                  <uc:OcrTextInfo Region="433, 400, 37, 10" Text="14520" />
+                  <uc:OcrTextInfo Region="550, 400, 75, 13" Text="300.000,00" />
+                  <uc:OcrTextInfo Region="632, 400, 22, 10" Text="EUR" />
+                  <uc:OcrTextInfo Region="43, 422, 10, 10" Text="-" />
+                  <uc:OcrTextInfo Region="60, 416, 59, 11" Text="Personal" />
+                  <uc:OcrTextInfo Region="126, 416, 30, 10" Text="Loan" />
+                  <uc:OcrTextInfo Region="265, 416, 30, 10" Text="LOAN" />
+                  <uc:OcrTextInfo Region="338, 416, 30, 11" Text="9856" />
+                  <uc:OcrTextInfo Region="374, 416, 30, 10" Text="6985" />
+                  <uc:OcrTextInfo Region="411, 416, 16, 11" Text="56" />
+                  <uc:OcrTextInfo Region="433, 416, 38, 11" Text="69856" />
+                  <uc:OcrTextInfo Region="551, 416, 59, 12" Text="2.000,00" />
+                  <uc:OcrTextInfo Region="617, 416, 22, 10" Text="EUR" />
+                  <uc:OcrTextInfo Region="60, 432, 58, 11" Text="Personal" />
+                  <uc:OcrTextInfo Region="126, 432, 30, 10" Text="Loan" />
+                  <uc:OcrTextInfo Region="265, 432, 30, 10" Text="LOAN" />
+                  <uc:OcrTextInfo Region="338, 432, 30, 11" Text="8546" />
+                  <uc:OcrTextInfo Region="374, 432, 30, 10" Text="6547" />
+                  <uc:OcrTextInfo Region="411, 432, 16, 10" Text="25" />
+                  <uc:OcrTextInfo Region="433, 432, 38, 10" Text="12547" />
+                  <uc:OcrTextInfo Region="550, 432, 60, 13" Text="2.300,00" />
+                  <uc:OcrTextInfo Region="617, 432, 22, 10" Text="EUR" />
+                  <uc:OcrTextInfo Region="0, 496, 53, 12" Text="Senyone" />
+                  <uc:OcrTextInfo Region="60, 496, 30, 11" Text="Bank" />
+                  <uc:OcrTextInfo Region="96, 498, 7, 9" Text="-" />
+                  <uc:OcrTextInfo Region="110, 496, 74, 12" Text="08/18/2022" />
+                  <uc:OcrTextInfo Region="191, 496, 60, 12" Text="04:22:30" />
+                  <uc:OcrTextInfo Region="441, 496, 22, 10" Text="F12" />
+                  <uc:OcrTextInfo Region="470, 497, 7, 9" Text="-" />
+                  <uc:OcrTextInfo Region="484, 495, 60, 12" Text="Transmit" />
+                  <uc:OcrTextInfo Region="566, 496, 16, 10" Text="F1" />
+                  <uc:OcrTextInfo Region="588, 498, 7, 8" Text="-" />
+                  <uc:OcrTextInfo Region="601, 496, 31, 13" Text="Help" />
+                  <uc:OcrTextInfo Region="653, 496, 16, 10" Text="F3" />
+                  <uc:OcrTextInfo Region="676, 498, 7, 8" Text="-" />
+                  <uc:OcrTextInfo Region="690, 496, 30, 11" Text="Back" />
+                  <uc:OcrTextInfo Region="741, 496, 9, 10" Text="X" />
+                  <uc:OcrTextInfo Region="757, 497, 6, 9" Text="-" />
+                  <uc:OcrTextInfo Region="770, 496, 45, 10" Text="Access" />
                 </scg:List>
               </uc:CVCache.OcrTexts>
             </uc:CVCache>
@@ -309,7 +299,7 @@
       </ActivityFunc>
     </p:CVScope.OCREngine>
     <p:CVScope.Target>
-      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23cd2364-ede4-4216-a128-b91377f432d7" InformativeScreenshot="226e501382f49359cc12e2d4088e6d35" Selector="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;&lt;wnd cls='Windows.UI.Composition.DesktopWindowContentBridge' title='DesktopWindowXamlSource' /&gt;" WaitForReady="INTERACTIVE">
+      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23cd2364-ede4-4216-a128-b91377f432d7" InformativeScreenshot="b5bdfdcf1f94e33f04268b9395da04a4" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*' /&gt;" WaitForReady="INTERACTIVE">
         <ui:Target.TimeoutMS>
           <InArgument x:TypeArguments="x:Int32" />
         </ui:Target.TimeoutMS>
