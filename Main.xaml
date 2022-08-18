@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>678.666666666667,2570</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1152,598.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="88">
@@ -100,27 +100,27 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,2505.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="476,534" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="434,1158.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Always" ScopeGuid="5efdedae-ed79-4ed0-9420-7a85ec46b039" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="630,1192.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Always" ScopeGuid="5efdedae-ed79-4ed0-9420-7a85ec46b039" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,864" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap:VirtualizedContainerService.HintSize="596,900" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check Terminal State" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,769.333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Timeout="10" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check Terminal State" sap:VirtualizedContainerService.HintSize="554,805.333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Timeout="10" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="On correct state" sap:VirtualizedContainerService.HintSize="242,592" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="On correct state" sap:VirtualizedContainerService.HintSize="242,584" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Default="admin" Name="user" />
                     <Variable x:TypeArguments="x:String" Default="12345" Name="password" />
@@ -131,12 +131,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="200,98" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="200,96" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="user">
+                      <InArgument x:TypeArguments="x:String" x:Key="in_User">
                         <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="user" />
                       </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="password">
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Password">
                         <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="password" />
                       </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
@@ -148,9 +148,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Search Customers With Fullname &#xD;&#xA;" DisplayName="Invoke SearchCustomersWithFullname workflow" sap:VirtualizedContainerService.HintSize="200,114.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SearchCustomersWithFullname.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Search Customers With Fullname &#xA;" DisplayName="Invoke FindCustomer workflow" sap:VirtualizedContainerService.HintSize="200,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FindCustomers.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="FullName">
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FullName">
                         <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FullName" />
                       </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
@@ -162,14 +162,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Scrabe screen with OCR to retrieve Balance and Card&#xD;&#xA;" DisplayName="Invoke GetClientInformation workflow" sap:VirtualizedContainerService.HintSize="200,114.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetClientInformation.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Scrabe screen with OCR to retrieve Balance and Card&#xA;" DisplayName="Invoke GetClientInformation workflow" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetClientInformation.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="out_Balance">
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_Balance">
                         <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_Balance" />
-                      </InOutArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="out_RIB">
+                      </OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_RIB">
                         <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_RIB" />
-                      </InOutArgument>
+                      </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -179,7 +179,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Balance : &quot; +out_Balance+ &quot; Card : &quot;+out_RIB]">
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Balance : &quot; +out_Balance+ &quot; Card : &quot;+out_RIB]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,13 +190,13 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,189.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,116.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;error&quot;]" />
+                  <Throw DisplayName="Impossible d’ouvrir l’application" Exception="[new BusinessRuleException(&quot;Impossible d’ouvrir l’application&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>

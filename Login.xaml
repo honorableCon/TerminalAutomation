@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="user" Type="InArgument(x:String)" />
-    <x:Property Name="password" Type="InArgument(x:String)" />
+    <x:Property Name="in_User" Type="InArgument(x:String)" />
+    <x:Property Name="in_Password" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>564.666666666667,1015.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>876,1016.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -35,6 +35,8 @@
       <x:String>System.IO</x:String>
       <x:String>System.Net.Mail</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,22 +77,23 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,950.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="476,952" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="434,858.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f90eee15-4523-4f10-b364-47a70247936f" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="434,860" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f90eee15-4523-4f10-b364-47a70247936f" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="284,564" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="284,565.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -104,7 +107,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Username" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f90eee15-4523-4f10-b364-47a70247936f" Text="[user]" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Username" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f90eee15-4523-4f10-b364-47a70247936f" Text="[in_User]" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="630, 586, 142, 39" FriendlyName="'windowsterminal.exe ter…'" Guid="667c618d-7077-4d9f-bdeb-f7c7a8fa2d23" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAI4AAAAnCAYAAADZ7nAuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAN/SURBVHhe7ZghixZRFIb9AV8zGQwqiIgsuKCIxSYYjdtMgsEkBpMYLFosGs1Wq9VqtPpbRp6Fd3n3eGa+mTOfI8gJD7vec+6Ze9773jvjXtjtdkPTLKWN05Ro4zQl2jhNiTZOU6KN05Ro4zQl2jhNiTZOU6KN05Ro4zQl2jhNiTZOU6KN05SYbZwrj54N9z/9OiWLg+I3n35M483/QxunKdHGaUq0cZoSbZymxGbGuXT8cLj1/PNw/PrbcO/Dz7NccfTiyx9z4OLVo9N6d95+P8u9+/7HaS1iMZ9cr8vzGL/2+OW5GrdffR0uPzg5N1cxeo35/M6Y5wvqKA/oj+feePIuXSMQJ5f10ovmXT95c1qPHhkjD+3i/KW6RHgGz4Oowxw2MQ5zM7M42mAHAVyYCDWjqNE4yvExj7nIGmfDPc/JzOPaRMY2RsaJ/ZEfx+KhqugS4eAoP9N+H5sYx5vkRCA+9ZxsQyQuIJ5yqY84jMemEYwc33zymS8xOdWK8bvmaoza1NU63Yz0onzBRmptejbP0xr5GW8B9aZN9luLNZHvt042F+bqEvGe2JMsZ4pNjKPxeHKm8FuCjYhxX092ujzOBsS4Yr7WqXy9TiDGxnAzxIOhzfcNjvWznLW6OMzPasxhE+Po5HAadOPEExihIc3J4qDnsbYY8/XOFUf5cf3gJzTGHMzCs4Eex2pWjbNWl0OxiXEQU+ZxuPYxUnYyfKP2kQnk650roPKXGof+/Jsh41DGWavLodjEOIKbhtdVZqI4Z61AWxkH0+i7AuiNjQb/tos1M1ModypnrS6HomQcxIpxf/dmH7oRrnHyXFy/efwDdt9rLWMr4+imoY/s5hyrWTXOWl0OxWzjuDH2CZsZawwXwjfYn8fmLBVpK+PI+NkcdBirWTXOWl2cTT6OQY0A3yZsCPj/OLxJgWigfMGYX/PxxHpdXgGxBk3z0+d4THOVB1NCKz9uMjCmuI9LE79xeAYHgt4U9z8H+DzXK9bPcqCiS8T7oV6WM8Ui48T3eYRYdttkuZGxxSN4li/ivCzHmRJUOUuMw+tW4xHM5PNAtdcYB5bqEtnsD4CCUxM/cPk9nijPZ2GZ4RCWeftOB3Ea9WcC//7XxoH4rSY9uHn+lnFgiS4RXQJjh30fi43TNNDGaUq0cZoSbZymRBunKdHGaUq0cZoSbZymwG74DfokrZ95lY4OAAAAAElFTkSuQmCC" InformativeScreenshot="8493dcbe0c620fd56db81ddc690e2661.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
                 </uix:NTypeInto.Target>
@@ -123,7 +126,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NKeyboardShortcuts>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="f90eee15-4523-4f10-b364-47a70247936f" Text="[password]" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="f90eee15-4523-4f10-b364-47a70247936f" Text="[in_Password]" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="625, 621, 140, 39" FriendlyName="'windowsterminal.exe ter…'" Guid="97d2a6b9-55c0-4f20-a40b-dc265852ab44" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIwAAAAnCAYAAADdG6ATAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQVSURBVHhe7ZchjxRBEIX5AetQCASQEELIJVwCIRgcCRJ5DkWCQBEE6oLAgMGARGOxWCwSy29Z8m3yNo+6mtmt2d3b21yJLzdb3dXTVfW6eu7KbDabN826tGCaEi2YpkQLpinRgmlKtGCaEi2YpkQL5hJw9+WX+eOvfxdk4xU2EsyNZ6+WG4k8/PR7fvTm+2JO5tucHwchGOfe62+pf3M+XEjB3HnxcfFbsMlHn/8sx289f5uu0eyeCykYnuP41ZtHS9E8+PDrzHhzPhyMYGCbm22mcVCC8Tluv/7kZGkHOtHx6c/F1UZn8rmRa8dPF99FzPdrT/Cxvakfc2VXbB4L49FGTPIH4qBYdFfN4Z8BbFmMXlhgn9i5zn2N++9+nHkX3D55/988ntnfuoJhTfIC2fqwc8EQRLZZ942MbRi/rNiOEr2pn+yKzRMv21B8CMKLF2EsiiYKhv26cOOY+3MQsnnAQdCzvy+CEDUvyyHsXDBDmyVYfASdhbkqakyI8CKQJE6frwPZB/YUP7oB89kbv/GLNhUZu/t63BRC7xsrCuJgDmtrDuuzljqaC5RnbBwu2YhThw0fzynoXRkuWGLN5uxUMGpxjJOoOJ7hwWeF1xiJiGNjTPGjoPiQSP0GXSvYlGQvPkLX+6IowEUjITie1yhE0Jj24N0lW88PSxyLIFYdhoytCYaX8FsQhCsbW7YGIBL5ebKVEEcnnLXVKbJOFJnip8LqtEkoEg42/vocIA5skIkem8bVJRz3Hyue0B4ycYJEDdl4ha0JZowsKYjET1pGJhj8VHyHU0TRshM21U+JViF4Jhbs+GFTsXyvfqWQI9kF79J4FqPnNfOPZKJ1FAdk4xV2JhiK43evQ/G8+zCXoMHbZ5ZMwSll/UwE2/JT4dkXe+aZmGVnjuLwwrZgBqgGJtRZEEcmKK05VniHqwUhuNiydSOr/BQf4tI1go/sEpGeox/gJ7vQWrDqSlonrxIMf7PxgxeMCpQJwouwrmAEyZ+ynyE/j4+90E2wIxpsXnj5+DhkRax89K4TBx1T83l3HPcDEccidEfIxmAvgtGJ8A5DoBSOomg8u9IoHPA+RwXVfrblJzt78eJj8zjcB7yICARx8T4XSxST9uRXGs+yZ2KQn+azF3U7YonXb/R1yIXmDV1vexGMn8wIAfvGgd/ydfsQWbDZvMgqP5Ivu8QCsfBAcf1kRxiLAsjmOWM5doFGvINmvmJMzGIvggFE4wnlFBA0SRwSDCeGQLwjCNbCP9vHVD9wYbhwvUBudxRLjBNb1i00Z4hVOUYY/i6e1dlky/wEnYkcgX+TORsJprl8tGCaEi2YpkQLpinRgmlKtGCaEi2YpkQLpinRgmlKtGCaEi2YpkQLpinRgmlKtGCaArP5P/hido5mx0qEAAAAAElFTkSuQmCC" InformativeScreenshot="408fe9bd2d45b3d9344d2c88b56119a6.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' cls='CASCADIA_HOSTING_WINDOW_CLASS' title='terminalemulator.exe' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
                 </uix:NTypeInto.Target>
