@@ -3,7 +3,7 @@
     <x:Property Name="in_User" Type="InArgument(x:String)" />
     <x:Property Name="in_Password" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>466,1016.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>682.666666666667,1109.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -79,28 +79,29 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,952" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="476,1044.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="434,860" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="452,1222" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="284,560" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,927.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Inputs sequence" sap:VirtualizedContainerService.HintSize="376,620.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Inputs sequence" sap:VirtualizedContainerService.HintSize="376,832.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,13 +128,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NKeyboardShortcuts>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Text="[in_Password]" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Text="[in_Password]" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable ContentHash="0-PbDuV3vUKjylEApM_qMw" DesignTimeRectangle="280, 251, 712, 127" FriendlyName="'Check Terminal State'" Guid="a5167554-fcad-4f6f-8bbd-b796806ee998" ImageBase64="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" InformativeScreenshot="0a8525bdf130a3614381d44ac4ed3084.png" Reference="jZHOs0pX70uZ3CqxqICqig/uw190ygOaEms3351goHTWg" ScopeSelectorArgument="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
                 </uix:NTypeInto.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -146,6 +147,27 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NKeyboardShortcuts>
+              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,336.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,116.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw DisplayName="Invalid user or password" Exception="[new BusinessRuleException(&quot;AS400_CONNEXION:  AS400 Impossible de se connecter avec les crédentials &quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="11, 719, 275, 18" FriendlyName="'terminalemulator.exe'" Guid="b2732cbb-efa4-4ce7-b66d-26621313a50f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARMAAAASCAYAAAB4gjqpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAATXSURBVHhe7Vo7biMxDA0QF0bi6d26dusygKs9jW+T0/gwvstEFIcih/rLlnezVvGAYMSRqMenJ42ct91uNw8MDAzci2EmAwMDD8FLmcm0/5ivX2/z/LWZv/dTMGZgYKANv9JMpulz/gZT+CPwtZ3PU9ogzsd3F387fgZjYric4L33YUID/z1SWp8msyHbNbSZL2q9WTPhgBj8F/8mWs3knpPJMJOBV8FLmYmEM5YCM7kHw0wGXgV3mYnEsxbnozDMZGDgsSgyk8B6qzaT6bAxA73N18M0nw9b/GxYTjA3885lSSDlYKt2MQ6MfTluTD/cJ0zqdvqIGkU2X2p3/cVjCTgvvl9htJkJcRa6p6F7HOBz9dy8o3m4HsM86DrMJvfrYT2W5sn2v+q77g5JoyTfXjmkNAmftKRJF1+ps7papGNlrvpdQkgTvfit1XoXM7kFE1i/R6SkFpFsQ0eMwBRavk/I5kvtsq9ILEBe0vp4jplcTvEcPNNJ5Ss4Y54283eE59pLaUKyboLrXjlkNak2tBqd1dSiJHbab+0CT80Ta8pa68Vvi9a7mImFcH17uamSIOJ0X7zAdZEXtxWTCPUrkctXIjs3yhfGEjs7vJc6+uVQYyZcrDU30x5ygLzkM+J3vfu6i2ZZC8c5Qu7CsINhPfMcajhBqhzOJjc6IdC8e+UQ1aQYT3JfqrOqWhTGurjFtEKaRK1hP734bdV6KF9Cu5kE2vXCAIQScxNRu0AMrZPTyMXiOP6Ow23hHHKoMxMShBG8+lTRwHcjvCwc+0Lz42s4lEj1adupzku/PXIAOE2KxePaKrSmayzzzdWiNNbFkZm4RY3mseaB+3w0v61a1/3ItvbPnIKFAQjFxxYBjA0ujuRq1E9OIxXr2iJ3PM8yEwCIRH7338yuBLuHzpkEkQSJNjO/FqSOvNi+5rtHDoAUv6EcIY9SnZXWojTW4wRyN3GQI2jAtZu69eI3F/fvmklswqp/R1wUr2Mmru2wNd++UvSw63HcMBNEjZm06ixXi5pYrBtyAH9D3vaZMBB41ovfXFxK6+7dRVcS3c2En2NydDQLx+C48tsQUDS5SL4SudjYOCzAcA45xDjjoobNRAIEiuJkAaR40eCxHreQuc9IbegY3tHQAEkzWdooh1adSYRqEUMoltcD6ArHwzxNzMIZmkk/fnto/SlmIt0WY/zJ0rvy0sheXsFPeInJ5fKVyMVKoVG7/nmtlmCAK7oVC77Pl6QI4gyPyonjseDOLRQTfzFcUWwINUKrAXPGc7PP3SISc+uUg9Ok0A6Aa8d1q9FZVS0a6nY1Y5LWaI1cj8gbcdaL31at2zxhDMhHjWHNhN0oBp+IGjMBWCc0CdhEFieV4AUXgyjykkMcfr5xiNgoD+aYao6tMYJz4CL7oJ8zpZkkeVDc4Q4Tg+Cs10JOzA0Ai9aPfXAOmRpLrVbprKIWzbHiOdcyVLcwWvlt1brkWq/zp5kJJxFfkNZtJXHLP1/hz1qCYDGhMPx841gTr08MtxMeh3Fu8dxz0P2CscIuRvlJzoAH/Y9EdJkn++R4s6MEBRcS5WMXMgD69i40l9rpuGeaCXAWOrGV6oxiS2tRGivXm6w7z0NpshO/LVq3ucM7wK0aw/vMGRj4baBFGNrgBp6F3fwDiQKR/EHmZHoAAAAASUVORK5CYII=" InformativeScreenshot="751b68c125963151d13a91ac4777fb6a.png" ScopeSelectorArgument="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
             </Sequence>
           </Sequence>
         </ActivityAction>

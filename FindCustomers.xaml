@@ -176,7 +176,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[new BusinessRuleException(&quot;Client non trouvé&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw DisplayName="client not found" Exception="[new BusinessRuleException(&quot;AS400_CLIENT_NOTFOUND: Client non trouvé&quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.Target>

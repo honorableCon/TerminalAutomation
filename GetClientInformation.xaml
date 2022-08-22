@@ -3,7 +3,7 @@
     <x:Property Name="out_Balance" Type="OutArgument(x:String)" />
     <x:Property Name="out_RIB" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>508,785.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>682.666666666667,785.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -94,7 +94,7 @@
           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
         </ActivityAction.Argument>
         <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_16">
-          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (550,368,60,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'BALANCE' (551,352,52,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="39ccad305eee7c2ec0833011d0750f16" RefreshBefore="True" Result="[out_Balance]" Version="V3">
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (550,368,60,13)&quot; +&#xA;&quot;Anchor: Text 'BALANCE' (551,352,52,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="Get Balance" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="39ccad305eee7c2ec0833011d0750f16" RefreshBefore="True" Result="[out_Balance]" Version="V3">
             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
               <uc:CvDescriptor>
                 <uc:CvDescriptor.Anchors>
@@ -108,7 +108,7 @@
               </uc:CvDescriptor>
             </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
           </p:CvGetTextWithDescriptor>
-          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (338,368,132,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'CONTRACT NUMBER' (338,352,112,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="61d04375a0a89f8fb0fb0f1b2315fb61" RefreshBefore="True" Result="[out_RIB]" Version="V3">
+          <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (338,368,132,10)&quot; +&#xA;&quot;Anchor: Text 'CONTRACT NUMBER' (338,352,112,10)&quot;]" DesignTimeCacheId="3325476f-23dd-4f28-8398-44d20a8d0485" DesignTimeScaleFactor="1.5" DisplayName="Get RIB" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="61d04375a0a89f8fb0fb0f1b2315fb61" RefreshBefore="True" Result="[out_RIB]" Version="V3">
             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
               <uc:CvDescriptor>
                 <uc:CvDescriptor.Anchors>
@@ -131,7 +131,7 @@
     <p:CVScope.DesignTimeCacheContainer>
       <uc:CvCacheContainer>
         <uc:CvCacheContainer.Caches>
-          <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+          <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
             <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="3325476f-23dd-4f28-8398-44d20a8d0485" InformativeScreenshot="3a29ae1376c8427c3030d5c9e449cc35" LogicalPosition="199, 190" OcrText=":\Users\Honorablecon\Documents\UiPath\TerminalAutomation\terminalemulator.e __ X Mainframe = Banking System - Enrique Diaz User ADMIN I_l_I_I CUSTOMER: &gt; Document : 11235P &gt; Full Name : Johhny Bravo &gt; Phone Number : +4412345612348 &gt; Date of Birth : 18/07/1989 &gt; Email : johhnybravo@mitest.com &gt; User Name : jbravo PRODUCTS: PRODUCT NAME TYPE CONTRACT NUMBER BALANCE - Personal Car Loan LOAN 8520 0258 02 02585 4.000,00 EUR - Normal Account ACCOUNT 9878 4563 21 02156 4.500,76 EUR - My First Home MORTGAGE 0231 2031 02 14520 300.000,00 EUR - Personal Loan LOAN 9856 6985 56 69856 2.000,00 EUR Personal Loan LOAN 8546 6547 25 12547 2.300,00 EUR Senyone Bank - 08/18/2022 04:22:30 F12 - Transmit F1 - Help F3 - Back X - Access" Position="199, 190" ScaleFactor="1.5" ScreenshotGuid="616fb3c7-c390-47e2-bc4f-1ad2f5074b12" ServerVersion="1">
               <uc:CVCache.CvUiElements>
                 <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
