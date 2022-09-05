@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_User" Type="InArgument(x:String)" />
-    <x:Property Name="in_Password" Type="InArgument(x:String)" />
+    <x:Property Name="in_Password" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_Path" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>640,560.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>644,1494</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -86,31 +87,38 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,496" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="494,1429.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="p_AS400">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Path" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminalemulator.exe" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="terminal" sap:VirtualizedContainerService.HintSize="452,1337.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1002.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Inputs sequence" sap:VirtualizedContainerService.HintSize="376,1430" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Inputs sequence" sap:VirtualizedContainerService.HintSize="376,908" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -121,11 +129,11 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Click enter" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1">
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Click enter" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,18 +141,18 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NKeyboardShortcuts>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Text="[in_Password]" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Password" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="334,244.666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" SecureText="[in_Password]" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable ContentHash="0-PbDuV3vUKjylEApM_qMw" DesignTimeRectangle="280, 251, 712, 127" FriendlyName="'Check Terminal State'" Guid="a5167554-fcad-4f6f-8bbd-b796806ee998" ImageBase64="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" InformativeScreenshot="0a8525bdf130a3614381d44ac4ed3084.png" Reference="jZHOs0pX70uZ3CqxqICqig/uw190ygOaEms3351goHTWg" ScopeSelectorArgument="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*' /&gt;" SearchSteps="Image" TargetType="ImageBased" />
                 </uix:NTypeInto.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Click enter" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1">
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Click enter" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,15 +160,15 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NKeyboardShortcuts>
-              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,336.666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
+              <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="94622a9f-b2f9-44ae-aa33-53c9e590323d" Version="V1">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,116.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Throw DisplayName="Invalid user or password" Exception="[new BusinessRuleException(&quot;AS400_CONNEXION:  AS400 Impossible de se connecter avec les crédentials &quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <Throw DisplayName="Invalid user or password" Exception="[new BusinessRuleException(&quot;AS400_CONNEXION:  AS400 Impossible de se connecter avec les crédentials &quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </Sequence>
                 </uix:NCheckState.IfExists>
                 <uix:NCheckState.Target>
@@ -178,7 +186,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="oVaenEFGQ02-BVLQwKxfTQ" FilePath="C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\terminalemulator.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVUSURBVGhD7ZlJT1tnFIZTVe2irSp1UfUHVO2i6/6EpmUeA4QpzEMimiqEQJxACGWwMRhjjPE8G2MIJCF0kKqmbRbtPuqqkZC6CqkUZggZcN6e7yPX/ggO4d6rNtBypGfhY/ve5z3fsb3wkcM6rMP6D9TlTm1DR5cOBwFNa3sjKb9JvMblWbEnfv/jz1dGvcbE2ctj5krKHxAsxFa96gByeBbgY+IdLs9KCvDLzz/ta4QAnxDvcnlWUoCnT6P7mlcSIBp9ClbRaBSbm5u7wirRNST+Pyfw7Xe38OPN26ph1xEF7ty5syvia6t0M9tgvT0HYDf/rDGAo2f9ONrkx+fNPnzR4kWShrjoRXKbByntbqR2uJDW6UJ6lxPpPQ5k6OzI1NuQZbAi2zjCrzN3927sunIQ5WsM07wnK0BySwgp5wlNEKkXA0hr8yO9nejwIaPTi8xuD7K0bmTrXMjRO5Hb78CxATvyBm3IH7KiYNi6I0CiqYtIr2OI8ictU7wnK0BWWxhZ7WFkd4wipyOE3M4gjnUHkacNIK/Xj/w+HwoMXhw3elFo8qDQ7EaRxYXiESdKbA6UOuyqT0CSb3BN8J6sAAWdERzvJrRjKNSFUaQfRXH/KEoGCGMIpaYgTpgDKLP4UW71ocLuRaXTg0q3G1UeN6q9LlUnIMqf9kd4T1aAE/oJlPUThnGUG8dRYYqgwjyGyuEwqkZGUW0LocYeQq0ziDp3gMtXkTwTr/E7cSrkVnUCovyZsVHe2zXAzd9ux97MblwzOIXaIcI8iVrLFdRZJ1BvH0e9I8KnXjhEu2+0Is0whLSBQaQPGpExNIDMYQOyLP3ItvapOgFRvmkywHvMcc8BGqzX0GC7ii8dV3HaOYVTjgkUDfqQphtBSq8ZqX0kbjAhzUjyJkF+ZEs+x65XdQKifPN1H+/JCtDonsZZ7zS+ck+hYMCDpO5hJGvNJD9E8iRuIHEjiZtI3Pxs6iN9yLbpSb4XuU6dqhMQ5TUzbt6TFUAT/AYnaeopPVYk9ZC8juT1JN9P8i9YmRySz3X04hjJ57m1qk5AlG/93s57sgLU28aR1GVBMsnvdWW4vEtL8j3I93arOgFR/tIPFt6TFUDJyjD5fE8PCkj+uL9T1QmI8l23BnlPVgAlK5Pv6UaBr4vLFwY7VJ2AKK/9tY/3ZAVQsjJcPvA1iki+ePSyqhMQ5RUFULIyhUw+xOTbUTJ2SVUAUV5RACUrUxS6jOJwO0rH2nBivDUWIBrd5GxuPuE8efKY8/jxI86jRw/x8CFjAxsbG3jwYB3r6+tYW1vD6uoqVlZW5AdQsjIl4UsojWzJl01ciAWQxGdnZ3dlY+MBF19fXyP5VZJfIfllLC8vyw+gZGVKI60kfxHlVy6gYvJ8LMDLJs7Et6bOxONTZ+JLS0vEovwASlambILJa7h85dWWWABJPNHURbZPnYkvYXFxEQsLC/IDKFmZ8kmSn2Lyzai6di4W4MUTF9dl59Ql+YWFefkBlKxM5VQLqki++vo51Ew3xQJI4ommLiJOfXGRiS9gfn6eIzuAkpVhU6++3kTyZ1F7ozEWYOfE43sufUjj4tLU4/L379+XH0DJyojydTNnYgEk8URTF3leXJKXHSAcvsFvrpaxyAwPIE186wO6teeJ1oXt+vPiigIw2I3lcm9uDn/du7ejzwLE10UUT7wuiZAdQC7SLyz7xpF+TeO7Ht/z7d8uidclEewe/2iAf4OXBjgIJAzQ2HT+KHviIEC6nxIfEm8xd6neIN4nPiJYuv0Mk3+PeJ2IFfvDjIV4m2BHs59hk98mf1iHdVgHto4c+RtNlUOr2bwTNgAAAABJRU5ErkJggg==" InformativeScreenshot="a2e5feff66d860e67be32a3b9595a049.png" Reference="jZHOs0pX70uZ3CqxqICqig/Iq6g4XYE00O35CJGYoNvsQ" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*'/&gt;" />
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="UDu-69EzOUeQvjw4lzaFeA" FilePath="[p_AS400]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVUSURBVGhD7ZlJT1tnFIZTVe2irSp1UfUHVO2i6/6EpmUeA4QpzEMimiqEQJxACGWwMRhjjPE8G2MIJCF0kKqmbRbtPuqqkZC6CqkUZggZcN6e7yPX/ggO4d6rNtBypGfhY/ve5z3fsb3wkcM6rMP6D9TlTm1DR5cOBwFNa3sjKb9JvMblWbEnfv/jz1dGvcbE2ctj5krKHxAsxFa96gByeBbgY+IdLs9KCvDLzz/ta4QAnxDvcnlWUoCnT6P7mlcSIBp9ClbRaBSbm5u7wirRNST+Pyfw7Xe38OPN26ph1xEF7ty5syvia6t0M9tgvT0HYDf/rDGAo2f9ONrkx+fNPnzR4kWShrjoRXKbByntbqR2uJDW6UJ6lxPpPQ5k6OzI1NuQZbAi2zjCrzN3927sunIQ5WsM07wnK0BySwgp5wlNEKkXA0hr8yO9nejwIaPTi8xuD7K0bmTrXMjRO5Hb78CxATvyBm3IH7KiYNi6I0CiqYtIr2OI8ictU7wnK0BWWxhZ7WFkd4wipyOE3M4gjnUHkacNIK/Xj/w+HwoMXhw3elFo8qDQ7EaRxYXiESdKbA6UOuyqT0CSb3BN8J6sAAWdERzvJrRjKNSFUaQfRXH/KEoGCGMIpaYgTpgDKLP4UW71ocLuRaXTg0q3G1UeN6q9LlUnIMqf9kd4T1aAE/oJlPUThnGUG8dRYYqgwjyGyuEwqkZGUW0LocYeQq0ziDp3gMtXkTwTr/E7cSrkVnUCovyZsVHe2zXAzd9ux97MblwzOIXaIcI8iVrLFdRZJ1BvH0e9I8KnXjhEu2+0Is0whLSBQaQPGpExNIDMYQOyLP3ItvapOgFRvmkywHvMcc8BGqzX0GC7ii8dV3HaOYVTjgkUDfqQphtBSq8ZqX0kbjAhzUjyJkF+ZEs+x65XdQKifPN1H+/JCtDonsZZ7zS+ck+hYMCDpO5hJGvNJD9E8iRuIHEjiZtI3Pxs6iN9yLbpSb4XuU6dqhMQ5TUzbt6TFUAT/AYnaeopPVYk9ZC8juT1JN9P8i9YmRySz3X04hjJ57m1qk5AlG/93s57sgLU28aR1GVBMsnvdWW4vEtL8j3I93arOgFR/tIPFt6TFUDJyjD5fE8PCkj+uL9T1QmI8l23BnlPVgAlK5Pv6UaBr4vLFwY7VJ2AKK/9tY/3ZAVQsjJcPvA1iki+ePSyqhMQ5RUFULIyhUw+xOTbUTJ2SVUAUV5RACUrUxS6jOJwO0rH2nBivDUWIBrd5GxuPuE8efKY8/jxI86jRw/x8CFjAxsbG3jwYB3r6+tYW1vD6uoqVlZW5AdQsjIl4UsojWzJl01ciAWQxGdnZ3dlY+MBF19fXyP5VZJfIfllLC8vyw+gZGVKI60kfxHlVy6gYvJ8LMDLJs7Et6bOxONTZ+JLS0vEovwASlambILJa7h85dWWWABJPNHURbZPnYkvYXFxEQsLC/IDKFmZ8kmSn2Lyzai6di4W4MUTF9dl59Ql+YWFefkBlKxM5VQLqki++vo51Ew3xQJI4ommLiJOfXGRiS9gfn6eIzuAkpVhU6++3kTyZ1F7ozEWYOfE43sufUjj4tLU4/L379+XH0DJyojydTNnYgEk8URTF3leXJKXHSAcvsFvrpaxyAwPIE186wO6teeJ1oXt+vPiigIw2I3lcm9uDn/du7ejzwLE10UUT7wuiZAdQC7SLyz7xpF+TeO7Ht/z7d8uidclEewe/2iAf4OXBjgIJAzQ2HT+KHviIEC6nxIfEm8xd6neIN4nPiJYuv0Mk3+PeJ2IFfvDjIV4m2BHs59hk98mf1iHdVgHto4c+RtNlUOr2bwTNgAAAABJRU5ErkJggg==" InformativeScreenshot="a2e5feff66d860e67be32a3b9595a049.png" Reference="jZHOs0pX70uZ3CqxqICqig/tbZ6tuMqPEuLYh9X1d-2zg" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*'/&gt;" />
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

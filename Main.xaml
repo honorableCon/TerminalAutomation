@@ -1,16 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.FullName="No name" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_FullName="Dwayne johnson" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_Balance" Type="OutArgument(x:String)" />
     <x:Property Name="out_RIB" Type="OutArgument(x:String)" />
-    <x:Property Name="FullName" Type="InArgument(x:String)" />
+    <x:Property Name="in_FullName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>788,1485.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>788,1745.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="88">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -62,7 +62,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -98,17 +98,17 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="798,1420.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="798,1680.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:String" Name="p_AS400" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,29 +116,36 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Open AS400" sap:VirtualizedContainerService.HintSize="756,1328.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Always" ScopeGuid="5efdedae-ed79-4ed0-9420-7a85ec46b039" Version="V1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="AS400_EXE_PATH" DisplayName="Get AS400 Path" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[p_AS400]</OutArgument>
+      </ui:GetRobotAsset.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Open AS400 dynamic" sap:VirtualizedContainerService.HintSize="756,1496" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Always" ScopeGuid="5efdedae-ed79-4ed0-9420-7a85ec46b039" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="722,994" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap:VirtualizedContainerService.HintSize="722,1161.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check Terminal State" sap:VirtualizedContainerService.HintSize="680,899.333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Timeout="10" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check Terminal State" sap:VirtualizedContainerService.HintSize="680,1066.66666666667" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5efdedae-ed79-4ed0-9420-7a85ec46b039" Timeout="10" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="On correct state" sap:VirtualizedContainerService.HintSize="376,639.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="On correct state" sap:VirtualizedContainerService.HintSize="376,806.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="user">
-                      <Variable.Default>
-                        <Literal x:TypeArguments="x:String">admdin</Literal>
-                      </Variable.Default>
-                    </Variable>
-                    <Variable x:TypeArguments="x:String" Default="12345" Name="password" />
+                    <Variable x:TypeArguments="x:String" Name="user" />
+                    <Variable x:TypeArguments="ss:SecureString" Name="password" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -146,22 +153,41 @@
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="334,98" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AS400_credentials" DisplayName="Get AS400 Credential" FolderPath="dame@senyone.sn's workspace" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[password]" Username="[user]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetRobotCredential>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login In AS400 with username and password" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="334,144.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_User">[user]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Password">[password]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_User">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="user" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_Password">
+                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="password" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Path">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="p_AS400" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Search Customers With Fullname &#xA;" DisplayName="Invoke FindCustomer workflow" sap:VirtualizedContainerService.HintSize="334,159.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FindCustomers.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_FullName">[FullName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FullName">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FullName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Path">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="p_AS400" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -195,11 +221,11 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,116.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Throw DisplayName="Impossible d’ouvrir l’application" Exception="[new BusinessRuleException(&quot;AS400_NOTOPEN:  AS400 Impossible à ouvrir &quot;)]" sap:VirtualizedContainerService.HintSize="208,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
@@ -219,7 +245,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="oVaenEFGQ02-BVLQwKxfTQ" FilePath="C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\terminalemulator.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVUSURBVGhD7ZlJT1tnFIZTVe2irSp1UfUHVO2i6/6EpmUeA4QpzEMimiqEQJxACGWwMRhjjPE8G2MIJCF0kKqmbRbtPuqqkZC6CqkUZggZcN6e7yPX/ggO4d6rNtBypGfhY/ve5z3fsb3wkcM6rMP6D9TlTm1DR5cOBwFNa3sjKb9JvMblWbEnfv/jz1dGvcbE2ctj5krKHxAsxFa96gByeBbgY+IdLs9KCvDLzz/ta4QAnxDvcnlWUoCnT6P7mlcSIBp9ClbRaBSbm5u7wirRNST+Pyfw7Xe38OPN26ph1xEF7ty5syvia6t0M9tgvT0HYDf/rDGAo2f9ONrkx+fNPnzR4kWShrjoRXKbByntbqR2uJDW6UJ6lxPpPQ5k6OzI1NuQZbAi2zjCrzN3927sunIQ5WsM07wnK0BySwgp5wlNEKkXA0hr8yO9nejwIaPTi8xuD7K0bmTrXMjRO5Hb78CxATvyBm3IH7KiYNi6I0CiqYtIr2OI8ictU7wnK0BWWxhZ7WFkd4wipyOE3M4gjnUHkacNIK/Xj/w+HwoMXhw3elFo8qDQ7EaRxYXiESdKbA6UOuyqT0CSb3BN8J6sAAWdERzvJrRjKNSFUaQfRXH/KEoGCGMIpaYgTpgDKLP4UW71ocLuRaXTg0q3G1UeN6q9LlUnIMqf9kd4T1aAE/oJlPUThnGUG8dRYYqgwjyGyuEwqkZGUW0LocYeQq0ziDp3gMtXkTwTr/E7cSrkVnUCovyZsVHe2zXAzd9ux97MblwzOIXaIcI8iVrLFdRZJ1BvH0e9I8KnXjhEu2+0Is0whLSBQaQPGpExNIDMYQOyLP3ItvapOgFRvmkywHvMcc8BGqzX0GC7ii8dV3HaOYVTjgkUDfqQphtBSq8ZqX0kbjAhzUjyJkF+ZEs+x65XdQKifPN1H+/JCtDonsZZ7zS+ck+hYMCDpO5hJGvNJD9E8iRuIHEjiZtI3Pxs6iN9yLbpSb4XuU6dqhMQ5TUzbt6TFUAT/AYnaeopPVYk9ZC8juT1JN9P8i9YmRySz3X04hjJ57m1qk5AlG/93s57sgLU28aR1GVBMsnvdWW4vEtL8j3I93arOgFR/tIPFt6TFUDJyjD5fE8PCkj+uL9T1QmI8l23BnlPVgAlK5Pv6UaBr4vLFwY7VJ2AKK/9tY/3ZAVQsjJcPvA1iki+ePSyqhMQ5RUFULIyhUw+xOTbUTJ2SVUAUV5RACUrUxS6jOJwO0rH2nBivDUWIBrd5GxuPuE8efKY8/jxI86jRw/x8CFjAxsbG3jwYB3r6+tYW1vD6uoqVlZW5AdQsjIl4UsojWzJl01ciAWQxGdnZ3dlY+MBF19fXyP5VZJfIfllLC8vyw+gZGVKI60kfxHlVy6gYvJ8LMDLJs7Et6bOxONTZ+JLS0vEovwASlambILJa7h85dWWWABJPNHURbZPnYkvYXFxEQsLC/IDKFmZ8kmSn2Lyzai6di4W4MUTF9dl59Ql+YWFefkBlKxM5VQLqki++vo51Ew3xQJI4ommLiJOfXGRiS9gfn6eIzuAkpVhU6++3kTyZ1F7ozEWYOfE43sufUjj4tLU4/L379+XH0DJyojydTNnYgEk8URTF3leXJKXHSAcvsFvrpaxyAwPIE186wO6teeJ1oXt+vPiigIw2I3lcm9uDn/du7ejzwLE10UUT7wuiZAdQC7SLyz7xpF+TeO7Ht/z7d8uidclEewe/2iAf4OXBjgIJAzQ2HT+KHviIEC6nxIfEm8xd6neIN4nPiJYuv0Mk3+PeJ2IFfvDjIV4m2BHs59hk98mf1iHdVgHto4c+RtNlUOr2bwTNgAAAABJRU5ErkJggg==" InformativeScreenshot="a2e5feff66d860e67be32a3b9595a049.png" Reference="jZHOs0pX70uZ3CqxqICqig/Iq6g4XYE00O35CJGYoNvsQ" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*'/&gt;" />
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="UDu-69EzOUeQvjw4lzaFeA" FilePath="[p_AS400]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAVUSURBVGhD7ZlJT1tnFIZTVe2irSp1UfUHVO2i6/6EpmUeA4QpzEMimiqEQJxACGWwMRhjjPE8G2MIJCF0kKqmbRbtPuqqkZC6CqkUZggZcN6e7yPX/ggO4d6rNtBypGfhY/ve5z3fsb3wkcM6rMP6D9TlTm1DR5cOBwFNa3sjKb9JvMblWbEnfv/jz1dGvcbE2ctj5krKHxAsxFa96gByeBbgY+IdLs9KCvDLzz/ta4QAnxDvcnlWUoCnT6P7mlcSIBp9ClbRaBSbm5u7wirRNST+Pyfw7Xe38OPN26ph1xEF7ty5syvia6t0M9tgvT0HYDf/rDGAo2f9ONrkx+fNPnzR4kWShrjoRXKbByntbqR2uJDW6UJ6lxPpPQ5k6OzI1NuQZbAi2zjCrzN3927sunIQ5WsM07wnK0BySwgp5wlNEKkXA0hr8yO9nejwIaPTi8xuD7K0bmTrXMjRO5Hb78CxATvyBm3IH7KiYNi6I0CiqYtIr2OI8ictU7wnK0BWWxhZ7WFkd4wipyOE3M4gjnUHkacNIK/Xj/w+HwoMXhw3elFo8qDQ7EaRxYXiESdKbA6UOuyqT0CSb3BN8J6sAAWdERzvJrRjKNSFUaQfRXH/KEoGCGMIpaYgTpgDKLP4UW71ocLuRaXTg0q3G1UeN6q9LlUnIMqf9kd4T1aAE/oJlPUThnGUG8dRYYqgwjyGyuEwqkZGUW0LocYeQq0ziDp3gMtXkTwTr/E7cSrkVnUCovyZsVHe2zXAzd9ux97MblwzOIXaIcI8iVrLFdRZJ1BvH0e9I8KnXjhEu2+0Is0whLSBQaQPGpExNIDMYQOyLP3ItvapOgFRvmkywHvMcc8BGqzX0GC7ii8dV3HaOYVTjgkUDfqQphtBSq8ZqX0kbjAhzUjyJkF+ZEs+x65XdQKifPN1H+/JCtDonsZZ7zS+ck+hYMCDpO5hJGvNJD9E8iRuIHEjiZtI3Pxs6iN9yLbpSb4XuU6dqhMQ5TUzbt6TFUAT/AYnaeopPVYk9ZC8juT1JN9P8i9YmRySz3X04hjJ57m1qk5AlG/93s57sgLU28aR1GVBMsnvdWW4vEtL8j3I93arOgFR/tIPFt6TFUDJyjD5fE8PCkj+uL9T1QmI8l23BnlPVgAlK5Pv6UaBr4vLFwY7VJ2AKK/9tY/3ZAVQsjJcPvA1iki+ePSyqhMQ5RUFULIyhUw+xOTbUTJ2SVUAUV5RACUrUxS6jOJwO0rH2nBivDUWIBrd5GxuPuE8efKY8/jxI86jRw/x8CFjAxsbG3jwYB3r6+tYW1vD6uoqVlZW5AdQsjIl4UsojWzJl01ciAWQxGdnZ3dlY+MBF19fXyP5VZJfIfllLC8vyw+gZGVKI60kfxHlVy6gYvJ8LMDLJs7Et6bOxONTZ+JLS0vEovwASlambILJa7h85dWWWABJPNHURbZPnYkvYXFxEQsLC/IDKFmZ8kmSn2Lyzai6di4W4MUTF9dl59Ql+YWFefkBlKxM5VQLqki++vo51Ew3xQJI4ommLiJOfXGRiS9gfn6eIzuAkpVhU6++3kTyZ1F7ozEWYOfE43sufUjj4tLU4/L379+XH0DJyojydTNnYgEk8URTF3leXJKXHSAcvsFvrpaxyAwPIE186wO6teeJ1oXt+vPiigIw2I3lcm9uDn/du7ejzwLE10UUT7wuiZAdQC7SLyz7xpF+TeO7Ht/z7d8uidclEewe/2iAf4OXBjgIJAzQ2HT+KHviIEC6nxIfEm8xd6neIN4nPiJYuv0Mk3+PeJ2IFfvDjIV4m2BHs59hk98mf1iHdVgHto4c+RtNlUOr2bwTNgAAAABJRU5ErkJggg==" InformativeScreenshot="a2e5feff66d860e67be32a3b9595a049.png" Reference="jZHOs0pX70uZ3CqxqICqig/tbZ6tuMqPEuLYh9X1d-2zg" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*'/&gt;" />
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

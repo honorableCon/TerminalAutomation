@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" ContentHash="UDu-69EzOUeQvjw4lzaFeA" FilePath="[p_AS400]" Selector="&lt;wnd app='terminalemulator.exe' cls='ConsoleWindowClass' title='C:\Users\Honorablecon\Documents\UiPath\TerminalAutomation\termin*'/&gt;" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0x9Pgd8kqMEW7mzquaLWY5A</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="a2e5feff66d860e67be32a3b9595a049.png" xmlns="">0C3EgcXzX_EGAMksqwfRlbg</imageRef>
+</TargetApp>

@@ -1,0 +1,11 @@
+﻿{
+  "Id": "u1aR4-wKXE2Zgk7fo_turw",
+  "Reference": "jZHOs0pX70uZ3CqxqICqig/u1aR4-wKXE2Zgk7fo_turw",
+  "Name": "AS400 Dynamic",
+  "Type": "App",
+  "Created": "2022-09-05T13:24:35.5614085Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-09-05T13:24:35.5614085Z"
+}
